@@ -30,7 +30,7 @@ export default class DogImage extends React.Component{
             <div>
             <Button type="primary" htmlType="submit" onClick={this.handleClick}>Generate doggo</Button>
             <div>
-            <img src={this.state.apiResponse} alt = " " />
+            <img src={this.state.apiResponse} alt = "" />
             </div>
             </div>
         )
