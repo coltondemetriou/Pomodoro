@@ -55,18 +55,33 @@ displayLog = () => {
        // }
     //)
 
+    handleClick = event =>{
+        firebase.auth().signOut().then(function() {
+            console.log("Sign-out successful");
+          }).catch(function(error) {
+            console.log(error);
+          });
+    }
+
 render(){
     return(
         <body>
             <div className="header">
 
                 <b>Hello, {this.state.userObject.name}!</b>
-              
                 <Button 
                     className="button-timer" 
-                    size="large" 
+                    size="small" 
                     type="primary">
                     <Link to='/Timer'>Start Timer</Link>
+                </Button>
+
+                <Button 
+                    className="button-logout" 
+                    onClick = {this.handleClick}
+                    size="small" 
+                    type="primary">
+                    <Link to='/'>Logout</Link>
                 </Button>
             </div>
 
